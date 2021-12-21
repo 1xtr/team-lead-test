@@ -1,0 +1,61 @@
+{
+  "key": "my-app",
+  "name": "My app",
+  "description": "My very first app",
+  "baseUrl": "{{localBaseUrl}}",
+  "authentication": {
+    "type": "jwt"
+  },
+  "lifecycle": {
+    "installed": "/installed"
+  },
+  "scopes": [
+    "READ"
+  ],
+  "apiMigrations": {
+    "signed-install": true
+  },
+  "modules": {
+    "generalPages": [
+      {
+        "key": "team-lead-test",
+        "location": "system.top.navigation.bar",
+        "name": {
+          "value": "Team Lead App"
+        },
+        "url": "/team-lead-test",
+        "conditions": [
+          {
+            "condition": "user_is_logged_in"
+          }
+        ]
+      }
+    ],
+    "webPanels": [
+      {
+        "url": "/web-panel",
+        "location": "atl.jira.view.issue.right.context",
+        "layout": {
+          "width": "10px",
+          "height": "100%"
+        },
+        "weight": 50,
+        "supportsNative": false,
+        "name": {
+          "value": "My Web Panel"
+        },
+        "key": "my-web-panel"
+      }
+    ],
+    "webItems": [
+      {
+        "location": "my-web-panel",
+        "url": "https://teamlead.ru",
+        "name": {
+          "value": "Link to teamlead.ru"
+        },
+        "key": "team-lead-link"
+      }
+    ]
+  }
+}

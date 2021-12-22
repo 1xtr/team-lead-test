@@ -41,6 +41,7 @@
     "morgan": "^1.10.0",
     "nocache": "^2.1.0",
     "node-fetch": "^2.6.6",
+    "pg": "^8.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "sequelize": "^6.3.5",

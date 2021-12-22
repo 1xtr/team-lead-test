@@ -1,6 +1,6 @@
 {
   "key": "my-app",
-  "name": "My app",
+  "name": "TrendCo.app",
   "description": "My very first app",
   "baseUrl": "{{localBaseUrl}}",
   "authentication": {
@@ -24,6 +24,20 @@
           "value": "Team Lead App"
         },
         "url": "/team-lead-test",
+        "conditions": [
+          {
+            "condition": "user_is_logged_in"
+          }
+        ]
+      },
+      {
+        "key": "settings-page-jira",
+        "location": "admin_plugins_menu/teamlead-task-menu-section",
+        "weight": 100,
+        "name": {
+          "value": "Settings"
+        },
+        "url": "/settings",
         "conditions": [
           {
             "condition": "user_is_logged_in"
@@ -55,6 +69,15 @@
           "value": "Link to teamlead.ru"
         },
         "key": "team-lead-link"
+      }
+    ],
+    "webSections": [
+      {
+        "key": "teamlead-task-menu-section",
+        "location": "admin_plugins_menu",
+        "name": {
+          "value": "Teamlead Task"
+        }
       }
     ]
   }

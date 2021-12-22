@@ -1,8 +1,8 @@
+import * as React from 'react'
+import {useEffect, useState} from 'react'
 import DynamicTable from '@atlaskit/dynamic-table'
 import Page, {Grid, GridColumn} from '@atlaskit/page'
 import Tabs, {Tab, TabList, TabPanel} from '@atlaskit/tabs'
-import * as React from 'react'
-import {useEffect, useState} from 'react'
 import AppLoader from '../components/AppLoader'
 import PageHeader from '../components/PageHeader'
 
@@ -29,7 +29,6 @@ const head = {
 
 export default function mainApp() {
   const [projects, setProjects] = useState([])
-  
   useEffect(() => {
     AP.request('/rest/api/3/project/search')
       .then(({xhr: {responseText}}) => {
